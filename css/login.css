@@ -18,11 +18,12 @@
     #login-sec {
         background-image: url('../images/login_sec2.png');
         background-size: cover;
-        padding: 10%;
         border-style: groove;
         border-color: #0029ad;
         border-radius: 10px;
         border-width: 0.25rem;
+        margin: 2rem 35rem;
+        padding: 10rem 2rem;
     }
 
     .login-form {
@@ -43,9 +44,9 @@
         margin-top: 2rem;
     }
 
-    @media (min-width: 700px) {
+    @media (max-width: 1200px) {
         #login-sec {
-            margin: 2rem 35rem;
-            padding: 10rem 2rem;
+            border: none;
+            margin: 0.25rem;
         }
     }
