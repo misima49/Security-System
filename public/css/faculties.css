@@ -1,0 +1,85 @@
+    body {
+        background-color: #bedcfa;
+        text-align: center;
+    }
+
+    .navbar {
+        background-color: #da9ff9;
+    }
+
+    .navbar-brand {
+        font-family: 'Pacifico', cursive;
+    }
+
+    .navbar-light .navbar-brand {
+        color: #11698e;
+    }
+
+
+    .domain-form .form-group {
+
+        border: 1px solid #9ff0c8;
+        padding: 20px height: 70px !important;
+        border: transparent;
+        margin: 2rem 10rem;
+    }
+
+    /*    .domain-form .form-group input {
+        height: 70px !important;
+        border: transparent }*/
+
+    .form-control {
+        height: 52px !important;
+        background: #fff !important;
+        color: #3a4348 !important;
+        font-size: 18px;
+        border-radius: 0px;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important
+    }
+
+    .px-4 {
+        padding-left: 1.5rem !important
+    }
+
+    .domain-form .form-group .search-domain {
+        background: #22d47b;
+        border: 2px solid #22d47b;
+        color: #fff;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        border-radius: 0
+    }
+
+
+    .table-custom {
+        margin: 2rem 2rem;
+        border: 2px;
+        max-width: 80%;
+    }
+
+    .vehicle-form {
+        text-align: center;
+    }
+
+    .col {
+        padding: 1rem 5rem;
+    }
+
+    .form-col {
+        padding: 0.25rem 1rem;
+        border-radius: 50px;
+    }
+
+
+    .row {
+        max-width: 80%;
+    }
+
+    @media (max-width: 1200px) {
+        #login-sec {
+            border: none;
+            margin: 0.25rem;
+        }
+    }

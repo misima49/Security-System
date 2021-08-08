@@ -1,0 +1,111 @@
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>IIIT SECURITY-Login</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,600&family=Pacifico&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css\homeView.css">
+    </head>
+
+    <body>
+        <!-- Navigation Bar -->
+
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">IIIT SECURITY</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/userHome">All Vehicles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/faculties">Faculties</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/students">Students</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/visitors">Visitors</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+        <p>Legends:</p>
+        </p> Origins: S = Student, F = Faculty, V = Visitors</p>
+        <table class="table table-striped table-bordered table-custom">
+            <thead>
+                <tr>
+                    <th class="col">Car No.</th>
+                    <th class="col">Model</th>
+                    <th class="col">Owner</th>
+                    <th class="col">Origin</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <% vehicleList.forEach(function(vehicle) { %>
+                <tr>
+                    <td>
+                        <%= vehicle._id %>
+                    </td>
+                    <td>
+                        <%= vehicle.model %>
+                    </td>
+                    <td>
+                        <%= vehicle.onwer %>
+                    </td>
+                    <td>
+                        <%= vehicle.origin %>
+                    </td>
+                </tr>
+                <% }) %>
+
+            </tbody>
+        </table>
+        
+        <div class="vehicle-form">
+        <form action="/userHome" class="form-inline" method="post">
+                <p class="h4">Add new vehicle</p>
+            
+                <div class="form-col">
+                    <input type="text" placeholder="Vehicle No." name="vehNo">
+                </div>
+
+                <div class="form-col">
+                    <input type="text" placeholder="Model" name="vehMod">
+                </div>
+
+                <div class="form-col">
+                    <input type="text" placeholder="Owner" name="vehOwn">
+                </div>
+
+                <div class="form-col">
+                    <input type="text" placeholder="Origin" name="vehOrig">
+                </div>
+            
+                <button type="submit" class="btn btn-primary">Submit</button>
+        
+        </form>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/        ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/      JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    </body>
+
+    </html>

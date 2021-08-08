@@ -1,0 +1,160 @@
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>IIIT SECURITY-Login</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,600&family=Pacifico&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css\faculties.css">
+    </head>
+
+    <body>
+        <!-- Navigation Bar -->
+
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">IIIT SECURITY</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/userHome">All Vehicles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/faculties">Faculties</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/students">Students</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/visitors">Visitors</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+
+        <div class="row justify-content-center padding">
+            <div class="col-md-8 ftco-animate fadeInUp ftco-animated">
+                <form action="/faculties" method="post" class="domain-form">
+                    <div class="form-group d-md-flex">
+                        <input name="idSearch" type="text" class="form-control px-4" placeholder="Enter faculties' id to search for...">
+                        <input type="submit" class="search-domain btn btn-primary px-5" value="Search">
+                    </div>
+                </form>
+            </div>
+            <p>*Use a: to display all students</p>
+        </div>
+
+        <table class="table table-striped table-bordered table-custom">
+            <thead>
+                <tr>
+                    <th class="col">Faculty ID</th>
+                    <th class="col">Department</th>
+                    <th class="col">Name</th>
+                    <th class="col">DOB</th>
+                    <th class="col">Current Status</th>
+                    <th class="col">Vehicle No.</th>
+                    <th class="col">Delete</th>
+                    <th class="col">Change Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if(faculty) { %>
+                <% if(Object.keys(faculty).length) { %>
+                <tr>
+                    <td>
+                        <%= faculty._id %>
+                    </td>
+                    <td>
+                        <%= faculty.dept %>
+                    </td>
+                    <td>
+                        <%= faculty.name %>
+                    </td>
+                    <td>
+                        <%= faculty.dob %>
+                    </td>
+                    <td>
+                        <%= faculty.currStatus %>
+                    </td>
+                    <% if(faculty.vehicleOwnd) { %>
+                        <td>
+                            <%= faculty.vehicleOwnd._id %>
+                        </td>
+                    <% } %>
+                    <% if(!faculty.vehicleOwnd) { %>
+                        <td>
+                            No Vehicle
+                        </td>
+                    <% } %>
+
+                    <td>
+                        <form action="/faculties" method="post">
+                            <button name="delBut" value= <%= faculty._id%> >+</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/faculties" method="post">
+                            <button name="chngStat" value= <%= faculty._id%> >+</button>
+                        </form>
+                    </td>
+                    <% } %>
+                </tr>
+                <% } %>
+
+            </tbody>
+        </table>
+
+        <div class="vehicle-form">
+        <form action="/faculties" class="form-inline" method="post">
+                <p class="h4">Add new Faculty</p>
+                
+                <div class="form-col">
+                    <input type="text" placeholder="Faculty ID" name="fID">
+                </div>
+
+                <div class="form-col">
+                    <input type="text" placeholder="Name" name="fName">
+                </div>
+
+                <div class="form-col">
+                    <input type="text" placeholder="Department" name="fDep">
+                </div>
+
+                <div class="form-col">
+                    <input type="text" placeholder="DOB(yyyy-mm-dd)" name="fDOB">
+                </div>
+                <div class="form-col">
+                    <input type="text" placeholder="Vehicle No." value="na" name="vehNo">
+                </div>
+
+                <div class="form-col">
+                    <input type="text" placeholder="Model" value="na" name="vehMod">
+                </div>
+            
+                <button name="addFacBut" type="submit" class="btn btn-primary">Submit</button>
+        
+        </form>
+        </div>
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+
+    </html>

@@ -1,0 +1,52 @@
+    body {
+        background-color: #bedcfa;
+        text-align: center;
+    }
+
+    .navbar {
+        background-color: #da9ff9;
+    }
+
+    .navbar-brand {
+        font-family: 'Pacifico', cursive;
+    }
+
+    .navbar-light .navbar-brand {
+        color: #11698e;
+    }
+
+    #login-sec {
+        background-image: url('../images/login_sec2.png');
+        background-size: cover;
+        border-style: groove;
+        border-color: #0029ad;
+        border-radius: 10px;
+        border-width: 0.1rem;
+        margin: 2rem 35rem;
+        padding: 10rem 2rem;
+    }
+
+    .login-form {
+        padding: 0.2rem 1rem;
+    }
+
+    .form-label {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 1.75rem;
+    }
+
+    .form-text {
+        color: #5c5353;
+        font-size: 1rem;
+    }
+
+    .btn {
+        margin-top: 2rem;
+    }
+
+    @media (max-width: 1200px) {
+        #login-sec {
+            border: none;
+            margin: 0.25rem;
+        }
+    }

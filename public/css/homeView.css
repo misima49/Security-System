@@ -1,0 +1,47 @@
+    body {
+        background-color: #bedcfa;
+        text-align: center;
+    }
+
+    .navbar {
+        background-color: #da9ff9;
+    }
+
+    .navbar-brand {
+        font-family: 'Pacifico', cursive;
+    }
+
+    .navbar-light .navbar-brand {
+        color: #11698e;
+    }
+
+    .table-custom {
+        margin: 2rem 2rem;
+        border: 2px;
+        max-width: 80%;
+    }
+
+    .vehicle-form {
+        text-align: center;
+    }
+
+    .col {
+        padding: 1rem 5rem;
+    }
+
+    .form-col {
+        padding: 0.25rem 1rem;
+        border-radius: 50px;
+    }
+
+
+    .row {
+        max-width: 80%;
+    }
+
+    @media (max-width: 1200px) {
+        #login-sec {
+            border: none;
+            margin: 0.25rem;
+        }
+    }
