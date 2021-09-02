@@ -3,7 +3,7 @@
     exports.adder = adder;
     exports.fetchAll = fetchAll;
 
-    mongoose.connect('mongodb://localhost/DbmsPro', { useNewUrlParser: true, useUnifiedTopology: true });
+    mongoose.connect(process.env.mongoAtlas || 'mongodb://localhost/DbmsPro', { useNewUrlParser: true, useUnifiedTopology: true });
 
     const db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
