@@ -21,7 +21,7 @@
     });
 
     app.post("/login", function(req, res) {
-        let errorC = false;
+        let error = false;
         loginManager.verifier(req.body.userID, req.body.userPassword)
             .then(function(resul) {
                 if (resul === 1) {
