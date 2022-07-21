@@ -35,7 +35,7 @@
 
     app.get("/userHome", function(req, res) {
         vehicleDBmanager.fetchAll().then(function(resul) {
-            //console.log(resul);
+            console.log(resul);
             res.render("allCarView", { vehicleList: resul });
         });
 
